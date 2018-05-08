@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-g
 
-all : show-bytes sum.o conversions conversions_printf
+all : show-bytes sum.o conversions conversions_printf sum_elements
 
 show-bytes : show-bytes.c
 	gcc -o show-bytes show-bytes.c
@@ -11,5 +11,7 @@ conversions : conversions.c
 	gcc -o conversions conversions.c
 conversions_printf : conversions_printf.c
 	gcc -o conversions_printf conversions_printf.c
+sum_elements : sum_elements
+	gcc -o sum_elements sum_elements.c
 clean :
-	rm -rf show-bytes *.o conversions conversions_printf
+	rm -rf show-bytes *.o conversions conversions_printf sum_elements
