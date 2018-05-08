@@ -2,9 +2,8 @@
 #include <string.h>
 
 /* Determine whether string s is longer than string t */
-/* WARNING: This function is buggy */
 int strlonger(char *s, char *t) {
-	return strlen(s) - strlen(t) > 0;
+	return strlen(s) > strlen(t);
 }
 
 void test_strlonger()
@@ -22,6 +21,6 @@ void test_strlonger()
 int main(int argc, const char *argv[])
 {
 	test_strlonger();
-	
+
 	return 0;
 }
