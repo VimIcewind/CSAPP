@@ -62,10 +62,20 @@ void test_expand()
 	show_bytes((byte_pointer) &ux, sizeof(unsigned));
 }
 
+void test_conversion_order()
+{
+	short sx = -12345;	/* -12345 */
+	unsigned uy = sx;	/* Mystery! */
+
+	printf("uy = %u:\t", uy);
+	show_bytes((byte_pointer) &uy, sizeof(unsigned));
+}
+
 int main(int argc, const char *argv[])
 {
 	test_show_bytes(12345);
 	test_twoscomplement();
 	test_expand();
+	test_conversion_order();
 	return 0;
 }
