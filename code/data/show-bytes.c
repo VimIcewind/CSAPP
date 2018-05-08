@@ -36,8 +36,18 @@ void test_show_bytes(int val)
 	show_pointer(pval);
 }
 
+void test_twoscomplement()
+{
+	short x = 12345;
+	short mx = -x;
+
+	show_bytes((byte_pointer) &x, sizeof(short));
+	show_bytes((byte_pointer) &mx, sizeof(short));
+}
+
 int main(int argc, const char *argv[])
 {
 	test_show_bytes(12345);
+	test_twoscomplement();
 	return 0;
 }
