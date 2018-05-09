@@ -8,7 +8,13 @@ void *copy_elements(void *ele_src[], int ele_cnt, size_t ele_size)
 	 * Allocate buffer for ele_cnt objects, each of ele_size bytes
 	 * and copy from locations designated by ele_src
 	 */
-	void *result = malloc(ele_cnt * ele_size);
+	long long unsigned required_size =
+		ele_cnt * (long long unsigned) ele_size;
+	size_t request_size = (size_t) required_size;
+	if (required_size != request_size)
+		/* Overflow must have occurred. Abort operation */
+		return NULL;
+	void *result = malloc(request_size);
 	if (result == NULL)
 		/* malloc failed */
 		return NULL;
