@@ -3,7 +3,7 @@ CC=gcc
 
 all : prog prog.S main.s mstore.s mstore.asm mstore.o \
 	exchange.s exchange.o exchangedemo scale.s scale.o \
-	shift_left4_rightn.s arith.s arith2.s
+	shift_left4_rightn.s arith.s arith2.s store_uprod.s
 
 prog : main.c mstore.c
 	$(CC) $(CFLAGS) -o prog main.c mstore.c
@@ -33,6 +33,9 @@ arith.s : arith.c
 	$(CC) $(CFLAGS) -S arith.c
 arith2.s : arith2.c
 	$(CC) $(CFLAGS) -S arith2.c
+store_uprod.s : store_uprod.c
+	$(CC) $(CFLAGS) -S store_uprod.c
+
 
 clean :
 	rm -rf prog mstore.asm exchangedemo *.S *.s *.o
