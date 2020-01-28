@@ -1,7 +1,7 @@
 CFLAGS=-g -Og
 CC=gcc
 
-all : prog prog.S main.s mstore.s mstore.asm mstore.o exchange.s exchange.o exchangedemo scale.o
+all : prog prog.S main.s mstore.s mstore.asm mstore.o exchange.s exchange.o exchangedemo scale.s scale.o
 
 prog : main.c mstore.c
 	$(CC) $(CFLAGS) -o prog main.c mstore.c
@@ -21,6 +21,8 @@ exchange.o : exchange.c
 	$(CC) $(CFLAGS) -c exchange.c
 exchangedemo : exchangedemo.c exchange.c
 	$(CC) $(CFLAGS) -o exchangedemo exchangedemo.c exchange.c
+scale.s : scale.c
+	$(CC) $(CFLAGS) -S scale.c
 scale.o : scale.c
 	$(CC) $(CFLAGS) -c scale.c
 clean :
