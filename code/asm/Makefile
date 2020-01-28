@@ -1,7 +1,9 @@
 CFLAGS=-g -Og
 CC=gcc
 
-all : prog prog.S main.s mstore.s mstore.asm mstore.o exchange.s exchange.o exchangedemo scale.s scale.o shift_left4_rightn.s
+all : prog prog.S main.s mstore.s mstore.asm mstore.o \
+	exchange.s exchange.o exchangedemo scale.s scale.o \
+	shift_left4_rightn.s arith.s
 
 prog : main.c mstore.c
 	$(CC) $(CFLAGS) -o prog main.c mstore.c
@@ -27,6 +29,8 @@ scale.o : scale.c
 	$(CC) $(CFLAGS) -c scale.c
 shift_left4_rightn.s : shift_left4_rightn.c
 	$(CC) $(CFLAGS) -S shift_left4_rightn.c
+arith.s : arith.c
+	$(CC) $(CFLAGS) -S arith.c
 
 clean :
 	rm -rf prog mstore.asm exchangedemo *.S *.s *.o
