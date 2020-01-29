@@ -8,8 +8,6 @@ all : prog prog.S main.s mstore.s mstore.asm mstore.o \
 
 prog : main.c mstore.c
 	$(CC) $(CFLAGS) -o prog main.c mstore.c
-prog.S : prog
-	objdump -d prog > prog.S
 main.s : main.c
 	$(CC) $(CFLAGS) -S main.c
 mstore.s : mstore.c
