@@ -6,7 +6,8 @@ OBJECT = prog main.s mstore.s mstore.asm mstore.o exchange.s exchange.o \
 	store_uprod.s remdiv.s uremdiv.s comp.s comp_int.s comp_short.s \
 	comp_unsigned_char.s comp_long.s comp_unsigned_long.s comp_pointer.s \
 	test_long.s test_short.s test_unsigned_short.s test_unsigned_char.s \
-	test.s test_int.s test_unsigned_int.s branch.s branch.o branch
+	test.s test_int.s test_unsigned_int.s branch.s branch.o branch \
+	absdiff_se.s gotodiff_se.s
 
 
 all : $(OBJECT)
