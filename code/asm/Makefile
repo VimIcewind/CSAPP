@@ -10,6 +10,7 @@ OBJECT = prog main.s mstore.s mstore.asm mstore.o exchange.s exchange.o \
 	absdiff_se.s gotodiff_se.s gotodiff_se_other.s cond.s gotocond.s tests.s\
 	absdiff.s cmovdiff.s cread.s arith_div.s test_cmov.s fact_do.s \
 	fact_do_goto.s dw_loop.s fact_while.s fact_while_jm_goto.s loop_while.s \
+	fact_while_O1.s
 
 
 all : $(OBJECT)
@@ -31,6 +32,11 @@ cmovdiff.s : cmovdiff.c
 	$(CC) -g -O2 -S cmovdiff.c
 test_cmov.s : test_cmov.c
 	$(CC) -g -O2 -S test_cmov.c
+
+fact_while_O1.s : fact_while.c
+	$(CC) -g -O1 -S fact_while.c -o fact_while_O1.s
+
+
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
