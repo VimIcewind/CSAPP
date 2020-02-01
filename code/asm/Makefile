@@ -9,7 +9,7 @@ OBJECT = prog main.s mstore.s mstore.asm mstore.o exchange.s exchange.o \
 	test.s test_int.s test_unsigned_int.s branch.s branch.o branch \
 	absdiff_se.s gotodiff_se.s gotodiff_se_other.s cond.s gotocond.s tests.s\
 	absdiff.s cmovdiff.s cread.s arith_div.s test_cmov.s fact_do.s \
-	fact_do_goto.s dw_loop.s fact_while.s fact_while_jm_goto.s
+	fact_do_goto.s dw_loop.s fact_while.s fact_while_jm_goto.s loop_while.s \
 
 
 all : $(OBJECT)
