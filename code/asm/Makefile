@@ -8,7 +8,8 @@ OBJECT = prog main.s mstore.s mstore.asm mstore.o exchange.s exchange.o \
 	test_long.s test_short.s test_unsigned_short.s test_unsigned_char.s \
 	test.s test_int.s test_unsigned_int.s branch.s branch.o branch \
 	absdiff_se.s gotodiff_se.s gotodiff_se_other.s cond.s gotocond.s tests.s\
-	absdiff.s cmovdiff.s cread.s arith_div.s test_cmov.s fact_do.s
+	absdiff.s cmovdiff.s cread.s arith_div.s test_cmov.s fact_do.s \
+	fact_do_goto.s
 
 
 all : $(OBJECT)
