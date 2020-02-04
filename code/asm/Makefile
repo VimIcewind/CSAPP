@@ -12,7 +12,7 @@ OBJECT = prog main.s mstore.s mstore.asm mstore.o exchange.s exchange.o \
 	fact_do_goto.s dw_loop.s fact_while.s fact_while_jm_goto.s loop_while.s \
 	fact_while_O1.s fact_while_gd_goto.s loop_while2.s fun_a.s fact_for.s \
 	fact_for_while.s fact_for_jm_goto.s fun_b.s switch_eg.s switch_eg_impl.s \
-	switch2.s switcher.s
+	switch2.s switcher.s fun.s
 
 all : $(OBJECT)
 
