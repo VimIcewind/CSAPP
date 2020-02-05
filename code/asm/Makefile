@@ -13,7 +13,7 @@ OBJECT = prog main.s mstore.s mstore.asm mstore.o exchange.s exchange.o \
 	fact_while_O1.s fact_while_gd_goto.s loop_while2.s fun_a.s fact_for.s \
 	fact_for_while.s fact_for_jm_goto.s fun_b.s switch_eg.s switch_eg_impl.s \
 	switch2.s switcher.s fun.s proc.s procprob.s procprob1.s caller.s \
-	caller_proc.s P.s P1.s rfact.s
+	caller_proc.s P.s P1.s rfact.s rfun.s
 
 
 all : $(OBJECT)
