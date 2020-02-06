@@ -10,16 +10,12 @@ struct rect {
 
 int main(int argc, char *argv[])
 {
-	struct rect r;
-	r.llx = r.lly = 0;
-	r.color = 0xFF00FF;
-	r.width = 10;
-	r.height = 20;
+	struct rect r = {0, 0, 10, 20, 0xFF00FF};
 
 	printf("r.llx = %ld\n", r.llx);
 	printf("r.lly = %ld\n", r.lly);
 	printf("r.width = %ld\n", r.width);
 	printf("r.height = %ld\n", r.height);
-	printf("r.color = %d\n", r.color);
+	printf("r.color = 0x%x\n", r.color);
 	return 0;
 }
