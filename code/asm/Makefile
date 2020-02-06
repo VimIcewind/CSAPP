@@ -14,7 +14,7 @@ OBJECT = prog main.s mstore.s mstore.asm mstore.o exchange.s exchange.o \
 	fact_for_while.s fact_for_jm_goto.s fun_b.s switch_eg.s switch_eg_impl.s \
 	switch2.s switcher.s fun.s proc.s procprob.s procprob1.s caller.s \
 	call_proc.s P.s P1.s rfact.s rfun.s sum_element.s fix_prod_ele.s \
-	fix_prod_ele_opt.s
+	fix_prod_ele_opt.s fix_set_diag.s fix_set_diag_opt.s fix_set_diag_opt1.s
 
 
 all : $(OBJECT)
@@ -46,6 +46,12 @@ fun_b.s : fun_b.c
 
 fix_prod_ele.s : fix_prod_ele.c
 	$(CC) -g -O1 -S fix_prod_ele.c
+fix_set_diag.s : fix_set_diag.c
+	$(CC) -g -O1 -S fix_set_diag.c
+fix_set_diag_opt.s : fix_set_diag_opt.c
+	$(CC) -g -O1 -S fix_set_diag_opt.c
+fix_set_diag_opt1.s : fix_set_diag_opt1.c
+	$(CC) -g -O1 -S fix_set_diag_opt1.c
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
