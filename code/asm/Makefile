@@ -13,7 +13,8 @@ OBJECT = prog main.s mstore.s mstore.asm mstore.o exchange.s exchange.o \
 	fact_while_O1.s fact_while_gd_goto.s loop_while2.s fun_a.s fact_for.s \
 	fact_for_while.s fact_for_jm_goto.s fun_b.s switch_eg.s switch_eg_impl.s \
 	switch2.s switcher.s fun.s proc.s procprob.s procprob1.s caller.s \
-	call_proc.s P.s P1.s rfact.s rfun.s sum_element.s
+	call_proc.s P.s P1.s rfact.s rfun.s sum_element.s fix_prod_ele.s \
+	fix_prod_ele_opt.s
 
 
 all : $(OBJECT)
@@ -42,6 +43,9 @@ loop_while2.s : loop_while2.c
 	$(CC) -g -O1 -S loop_while2.c
 fun_b.s : fun_b.c
 	$(CC) -g -O1 -S fun_b.c
+
+fix_prod_ele.s : fix_prod_ele.c
+	$(CC) -g -O1 -S fix_prod_ele.c
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
