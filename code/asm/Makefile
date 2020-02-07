@@ -56,6 +56,8 @@ fix_set_diag_opt1.s : fix_set_diag_opt1.c
 
 rect : rect.c
 	$(CC) -g -o rect rect.c
+rec.s : rec.c
+	$(CC) -g -S rec.c
 rec : rec.c
 	$(CC) -g -o rec rec.c
 

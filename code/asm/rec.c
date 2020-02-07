@@ -17,8 +17,14 @@ int main(int argc, char *argv[])
 	int a;
 	struct rec record = {1, 2, {3, 4}, &a};
 	struct rec *r = &record;
+
 	show_rec(r);
 	r->j = r->i;
 	show_rec(r);
+
+	printf("&(r->a[1]) is %p\n", &(r->a[1]));
+	r->p = &r->a[r->i + r->j];
+	show_rec(r);
+
 	return 0;
 }
