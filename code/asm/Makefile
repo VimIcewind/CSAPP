@@ -15,7 +15,7 @@ OBJECT = prog main.s mstore.s mstore.asm mstore.o exchange.s exchange.o \
 	switch2.s switcher.s fun.s proc.s procprob.s procprob1.s caller.s \
 	call_proc.s P.s P1.s rfact.s rfun.s sum_element.s fix_prod_ele.s \
 	fix_prod_ele_opt.s fix_set_diag.s fix_set_diag_opt.s fix_set_diag_opt1.s \
-	var_ele.s var_prod_ele.s var_prod_ele_opt.s rect.s rect rec
+	var_ele.s var_prod_ele.s var_prod_ele_opt.s rect.s rect rec prob.s
 
 
 all : $(OBJECT)
