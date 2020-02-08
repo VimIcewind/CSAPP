@@ -16,7 +16,7 @@ OBJECT = prog main.s mstore.s mstore.asm mstore.o exchange.s exchange.o \
 	call_proc.s P.s P1.s rfact.s rfun.s sum_element.s fix_prod_ele.s \
 	fix_prod_ele_opt.s fix_set_diag.s fix_set_diag_opt.s fix_set_diag_opt1.s \
 	var_ele.s var_prod_ele.s var_prod_ele_opt.s rect.s rect rec prob.s ELE.s \
-	S3U3.s S3U3
+	S3U3.s S3U3 node.s node
 
 
 all : $(OBJECT)

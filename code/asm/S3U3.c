@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	union U3 *pu = &u;
 
 	printf("sizeof(struct S3) is %ld\n", sizeof(struct S3));
-	printf("sizeof(struct U3) is %ld\n", sizeof(union U3));
+	printf("sizeof(union U3) is %ld\n", sizeof(union U3));
 	printf("&ps->c is %p\n&ps->i[0] is %p\n&ps->v is %p\n", &ps->c, &ps->i[0], &ps->v);
 	printf("&pu->c is %p\n&pu->i[0] is %p\n&pu->v is %p\n", &pu->c, &pu->i[0], &pu->v);
 	return 0;
