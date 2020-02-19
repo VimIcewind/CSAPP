@@ -19,7 +19,7 @@ OBJECT = prog main.s mstore.s mstore.asm mstore.o exchange.s exchange.o \
 	S3U3.s S3U3 node.s node double2bits.s uu2double.s u_type_long.s \
 	u_type_short.s u_type_char_pointer.s u_type_int_array.s u_type_int.s \
 	u_type_char.s Px.s Px struct_rec.s struct_rec func_pointer gets.s \
-	get_line.s get_line localaddress vframe.s intlen.s
+	get_line.s get_line localaddress vframe.s intlen.s float_mov.s
 
 
 all : $(OBJECT)
