@@ -1,12 +1,15 @@
 CFLAGS=-g -Og
 CC=gcc
 
-OBJECT = sum.s
+OBJECT = sum.s rsum.s
 
 all : $(OBJECT)
 
 sum.s : sum.c
-	$(CC) -g -S sum.c
+	$(CC) -g -O2 -S sum.c
+
+rsum.s : rsum.c
+	$(CC) -g -O1 -S rsum.c
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
