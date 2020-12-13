@@ -80,6 +80,29 @@ void combine5(vec_ptr v, data_t *dest)
 	*dest = acc;
 }
 
+/* 2 x 2 loop unrolling */
+void combine6(vec_ptr v, data_t *dest)
+{
+	long i;
+	long length = vec_length(v);
+	long limit = length - 1;
+	data_t *data = get_vec_start(v);
+	data_t acc0 = IDENT;
+	data_t acc1 = IDENT;
+
+	/* Combine 2 elements at a time */
+	for (i = 0; i < limit; i+=2) {
+		acc0 = acc0 OP data[i];
+		acc1 = acc1 OP data[i+1];
+	}
+
+	/* Finish any remaining elements */
+	for (; i < length; i++) {
+		acc0 = acc0 OP data[i];
+	}
+	*dest = acc0 OP acc1;
+}
+
 int main(int argc, const char *argv[])
 {
 	data_t result;
@@ -97,6 +120,8 @@ int main(int argc, const char *argv[])
 	printf("combine4: %ld\n", result);
 	combine5(pvr, &result);
 	printf("combine5: %ld\n", result);
+	combine6(pvr, &result);
+	printf("combine6: %ld\n", result);
 
 	return 0;
 }
