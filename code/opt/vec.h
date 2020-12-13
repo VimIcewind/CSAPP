@@ -9,3 +9,4 @@ typedef struct {
 extern vec_ptr new_vec(long len);
 extern int get_vec_element(vec_ptr v, long index, data_t *dest);
 extern long vec_length(vec_ptr v);
+extern void free_vec(vec_ptr v);

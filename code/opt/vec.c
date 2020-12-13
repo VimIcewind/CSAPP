@@ -43,3 +43,11 @@ long vec_length(vec_ptr v)
 {
 	return v->len;
 }
+
+/* Free storage used by vector */
+void free_vec(vec_ptr v)
+{
+	if (v->data)
+		free(v->data);
+    free(v);
+}
