@@ -45,6 +45,19 @@ void combine3(vec_ptr v, data_t *dest)
 	}
 }
 
+/* Accumulate result in local variable */
+void combine4(vec_ptr v, data_t *dest)
+{
+	long i;
+	long length = vec_length(v);
+	data_t *data = get_vec_start(v);
+	data_t acc = IDENT;
+
+	for (i = 0; i < length; i++) {
+		acc = acc OP data[i];
+	}
+	*dest = acc;
+}
 
 int main(int argc, const char *argv[])
 {
@@ -59,6 +72,8 @@ int main(int argc, const char *argv[])
 	printf("combine2: %ld\n", result);
 	combine3(pvr, &result);
 	printf("combine3: %ld\n", result);
+	combine4(pvr, &result);
+	printf("combine4: %ld\n", result);
 
 	return 0;
 }
