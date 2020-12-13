@@ -22,8 +22,8 @@ void combine1(vec_ptr v, data_t *dest)
 void combine2(vec_ptr v, data_t *dest)
 {
 	long i;
-    long length = vec_length(v);
-	
+	long length = vec_length(v);
+
 	*dest = IDENT;
 	for (i = 0; i < length; i++) {
 		data_t val;
