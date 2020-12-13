@@ -51,3 +51,9 @@ void free_vec(vec_ptr v)
 		free(v->data);
     free(v);
 }
+
+/* Get vector start */
+data_t *get_vec_start(vec_ptr v)
+{
+	return v->data;
+}

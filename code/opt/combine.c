@@ -32,6 +32,20 @@ void combine2(vec_ptr v, data_t *dest)
 	}
 }
 
+/* Direct access to vector data */
+void combine3(vec_ptr v, data_t *dest)
+{
+	long i;
+	long length = vec_length(v);
+	data_t *data = get_vec_start(v);
+
+	*dest = IDENT;
+	for (i = 0; i < length; i++) {
+		*dest = *dest OP data[i];
+	}
+}
+
+
 int main(int argc, const char *argv[])
 {
 	data_t result;
@@ -43,6 +57,8 @@ int main(int argc, const char *argv[])
 	printf("combine1: %ld\n", result);
 	combine2(pvr, &result);
 	printf("combine2: %ld\n", result);
+	combine3(pvr, &result);
+	printf("combine3: %ld\n", result);
 
 	return 0;
 }
