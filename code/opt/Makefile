@@ -1,4 +1,4 @@
-CFLAGS=-g -Og
+CFLAGS=-g -Og -pg
 CC=gcc
 
 OBJECT = combine
@@ -14,5 +14,5 @@ combine : combine.c vec.c vec.h
 	$(CC) $(CFLAGS) -c $*.c
 
 clean :
-	rm -rf $(OBJECT)
+	rm -rf $(OBJECT) gmon.out *.s
 
