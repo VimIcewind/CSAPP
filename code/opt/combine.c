@@ -59,6 +59,21 @@ void combine4(vec_ptr v, data_t *dest)
 	*dest = acc;
 }
 
+/* Include bonds check in loop */
+void combine4b(vec_ptr v, data_t *dest)
+{
+	long i;
+	long length = vec_length(v);
+	data_t acc = IDENT;
+
+	for (i = 0; i < length; i++) {
+		if (i >= 0 && i < v->len) {
+			acc = acc OP v->data[i];
+		}
+	}
+	*dest = acc;
+}
+
 /* 2 x 1 loop unrolling */
 void combine5(vec_ptr v, data_t *dest)
 {
@@ -139,6 +154,8 @@ int main(int argc, const char *argv[])
 	printf("combine3: %ld\n", result);
 	combine4(pvr, &result);
 	printf("combine4: %ld\n", result);
+	combine4b(pvr, &result);
+	printf("combine4b: %ld\n", result);
 	combine5(pvr, &result);
 	printf("combine5: %ld\n", result);
 	combine6(pvr, &result);
