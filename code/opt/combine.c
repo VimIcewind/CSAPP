@@ -124,7 +124,6 @@ void combine7(vec_ptr v, data_t *dest)
 	*dest = acc;
 }
 
-
 int main(int argc, const char *argv[])
 {
 	data_t result;
