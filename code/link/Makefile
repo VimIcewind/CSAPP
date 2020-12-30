@@ -14,5 +14,5 @@ prog : main.c sum.c
 	$(CC) $(CFLAGS) -c $*.c
 
 clean :
-	rm -rf $(OBJECT) *.s
+	rm -rf $(OBJECT) *.s *.o
 
