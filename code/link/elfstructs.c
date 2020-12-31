@@ -7,3 +7,10 @@ typedef struct {
 	long	value;		/* Section offset or absolute address */
 	long	size;		/* Object size in bytes */
 } Elf64_Symbol;
+
+typedef struct {
+	long	offset;		/* Offset of the reference to relocate */
+	long	type:32,	/* Relocation type */
+		symbol:32;	/* Symbol table index */
+	long	addend;		/* Constant part of relocation expression */
+} Elf64_Rela;
