@@ -15,17 +15,17 @@ libvector.a : addvec.o multvec.o
 	ar rcs libvector.a addvec.o multvec.o
 
 prog2c : main2.o libvector.a
-	#gcc -static -o prog2c main2.o ./libvector.a
-	gcc -static -o prog2c main2.o -L. -lvector
+	#$(CC) $(CFLAGS) -static -o prog2c main2.o ./libvector.a
+	$(CC) $(CFLAGS) -static -o prog2c main2.o -L. -lvector
 
 libvector.so : addvec.c multvec.c
-	gcc -shared -fpic -o libvector.so addvec.c multvec.c
+	$(CC) $(CFLAGS) -shared -fpic -o libvector.so addvec.c multvec.c
 
 prog2l : main2.c libvector.so
-	gcc -o prog2l main2.c libvector.so
+	$(CC) $(CFLAGS) -o prog2l main2.c libvector.so
 
 prog2r : dll.c
-	gcc -rdynamic -o prog2r dll.c -ldl
+	$(CC) $(CFLAGS) -rdynamic -o prog2r dll.c -ldl
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
