@@ -1,7 +1,7 @@
 CFLAGS=-g -Og
 CC=gcc
 
-OBJECT = write
+OBJECT = write fork
 
 all : $(OBJECT)
 
