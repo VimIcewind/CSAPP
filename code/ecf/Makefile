@@ -1,7 +1,7 @@
 CFLAGS=-g -Og
 CC=gcc
 
-OBJECT = write fork forkfork forkprob0
+OBJECT = write getpid fork forkfork forkprob0
 
 all : $(OBJECT)
 
