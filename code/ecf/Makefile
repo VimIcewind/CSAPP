@@ -2,7 +2,7 @@ CFLAGS=-g -Og
 CC=gcc
 
 OBJECT = write getpid fork forkfork forkprob0 waitpid1 waitpid2 waitprob0 waitprob1 \
-	 sleep pause snooze
+	 sleep pause snooze myecho
 
 all : $(OBJECT)
 
@@ -20,6 +20,9 @@ waitprob0 : waitprob0.c ../src/csapp.c ../include/csapp.h
 
 waitprob1 : waitprob1.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o waitprob1 waitprob1.c ../src/csapp.c -I../include/ -lpthread
+
+myecho : myecho.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o myecho myecho.c ../src/csapp.c -I../include/ -lpthread
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
