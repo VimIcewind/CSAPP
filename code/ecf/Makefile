@@ -1,7 +1,8 @@
 CFLAGS=-g -Og
 CC=gcc
 
-OBJECT = write getpid fork forkfork forkprob0 waitpid1 waitpid2 waitprob1
+OBJECT = write getpid fork forkfork forkprob0 waitpid1 waitpid2 waitprob0 waitprob1 \
+	 sleep
 
 all : $(OBJECT)
 
