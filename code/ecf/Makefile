@@ -2,7 +2,7 @@ CFLAGS=-g -Og
 CC=gcc
 
 OBJECT = write getpid fork forkfork forkprob0 waitpid1 waitpid2 waitprob0 waitprob1 \
-	 sleep pause snooze myecho shellex pgrp
+	 sleep pause snooze myecho shellex pgrp kill
 
 all : $(OBJECT)
 
