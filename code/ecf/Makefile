@@ -1,8 +1,8 @@
 CFLAGS=-g -Og
 CC=gcc
 
-OBJECT = write getpid fork forkfork forkprob0 waitpid1 waitpid2 waitprob0 waitprob1 \
-	 sleep pause snooze myecho shellex pgrp kill alarm
+OBJECT = write getpid fork forkfork forkprob0 waitpid1 waitpid2 waitprob0 waitprob1\
+	 sleep pause snooze myecho shellex pgrp kill alarm sigint
 
 all : $(OBJECT)
 
@@ -29,6 +29,9 @@ shellex : shellex.c ../src/csapp.c ../include/csapp.h
 
 kill : kill.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o kill kill.c ../src/csapp.c -I../include/ -lpthread
+
+sigint : sigint.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o sigint sigint.c ../src/csapp.c -I../include/ -lpthread
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
