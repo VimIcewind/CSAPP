@@ -33,6 +33,9 @@ kill : kill.c ../src/csapp.c ../include/csapp.h
 sigint : sigint.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o sigint sigint.c ../src/csapp.c -I../include/ -lpthread
 
+snooze : snooze.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o snooze snooze.c ../src/csapp.c -I../include/ -lpthread
+
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
 .c.o :
