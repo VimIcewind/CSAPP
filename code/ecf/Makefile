@@ -3,6 +3,7 @@ CC=gcc
 
 OBJECT = write getpid fork forkfork forkprob0 waitpid1 waitpid2 waitprob0 waitprob1\
 	sleep pause snooze myecho shellex pgrp kill alarm sigint sigintsafe signal1\
+	signal2
 
 all : $(OBJECT)
 
@@ -41,6 +42,9 @@ snooze : snooze.c ../src/csapp.c ../include/csapp.h
 
 signal1 : signal1.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o signal1 signal1.c ../src/csapp.c -I../include/ -lpthread
+
+signal2 : signal2.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o signal2 signal2.c ../src/csapp.c -I../include/ -lpthread
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
