@@ -28,13 +28,13 @@ int main(int argc, char **argv)
 		if (Fork() == 0) /* Child */
 			exit(0);
 
-		/* Parent */
-		pid = 0;
-		Sigprocmask(SIG_SETMASK, &prev, NULL); /* Unblock SIGCHLD */
-
 		/* Wait for SIGCHLD to be received (wasteful) */
+		pid = 0;
 		while (!pid) /* Too slow! */
-			sleep(1);
+			sigsuspend(&prev);
+
+		/* Optionally unblock SIGCHLD */
+		Sigprocmask(SIG_SETMASK, &prev, NULL);
 
 		/* Do some work after receiving SIGCHLD */
 		printf(".");
@@ -42,3 +42,4 @@ int main(int argc, char **argv)
 
 	exit(0);
 }
+
