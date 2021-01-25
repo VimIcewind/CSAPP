@@ -4,6 +4,7 @@ CC=gcc
 OBJECT = write getpid fork forkfork forkprob0 waitpid1 waitpid2 waitprob0 waitprob1\
 	sleep pause snooze myecho shellex pgrp kill alarm sigint sigintsafe signal1\
 	signal2 signalprob0 procmask1 procmask2 waitforsignal sigsuspend setjmp\
+	restart
 
 all : $(OBJECT)
 
@@ -63,6 +64,9 @@ sigsuspend : sigsuspend.c ../src/csapp.c ../include/csapp.h
 
 setjmp : setjmp.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o setjmp setjmp.c ../src/csapp.c -I../include/ -lpthread
+
+restart : restart.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o restart restart.c ../src/csapp.c -I../include/ -lpthread
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
