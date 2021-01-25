@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 
 		/* Wait for SIGCHLD to be received (wasteful) */
 		while (!pid)
-			;
+			pause();
 
 		/* Do some work after receiving SIGCHLD */
 		printf(".");
