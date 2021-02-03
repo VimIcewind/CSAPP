@@ -1,7 +1,7 @@
 CFLAGS=-g -Og
 CC=gcc
 
-OBJECT = mmapcopy hardcode dyncode
+OBJECT = mmapcopy hardcode dyncode garbage
 
 all : $(OBJECT)
 
@@ -13,6 +13,9 @@ hardcode : hardcode.c ../src/csapp.c ../include/csapp.h
 
 dyncode : dyncode.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o dyncode dyncode.c ../src/csapp.c -I../include/ -lpthread
+
+garbage : garbage.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o garbage garbage.c ../src/csapp.c -I../include/ -lpthread
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
