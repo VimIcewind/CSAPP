@@ -1,7 +1,7 @@
 CFLAGS=-g -Og
 CC=gcc
 
-OBJECT = openclose cpstdin cpfile statcheck readdir
+OBJECT = openclose cpstdin cpfile statcheck readdir sharefile forkfile
 
 all : $(OBJECT)
 
@@ -19,6 +19,12 @@ statcheck : statcheck.c ../src/csapp.c ../include/csapp.h
 
 readdir : readdir.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o readdir readdir.c ../src/csapp.c -I../include/ -lpthread
+
+sharefile : sharefile.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o sharefile sharefile.c ../src/csapp.c -I../include/ -lpthread
+
+forkfile : forkfile.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o forkfile forkfile.c ../src/csapp.c -I../include/ -lpthread
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
