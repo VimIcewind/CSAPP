@@ -1,7 +1,7 @@
 CFLAGS=-g -Og
 CC=gcc
 
-OBJECT = openclose cpstdin cpfile statcheck
+OBJECT = openclose cpstdin cpfile statcheck readdir
 
 all : $(OBJECT)
 
@@ -16,6 +16,9 @@ cpfile : cpfile.c ../src/csapp.c ../include/csapp.h
 
 statcheck : statcheck.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o statcheck statcheck.c ../src/csapp.c -I../include/ -lpthread
+
+readdir : readdir.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o readdir readdir.c ../src/csapp.c -I../include/ -lpthread
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
