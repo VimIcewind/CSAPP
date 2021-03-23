@@ -1,7 +1,7 @@
 CFLAGS=-g -Og
 CC=gcc
 
-OBJECT = hex2dd dd2hex hostinfo
+OBJECT = hex2dd dd2hex hostinfo hostinfo-ntop
 
 all : $(OBJECT)
 
@@ -13,6 +13,9 @@ dd2hex : dd2hex.c ../src/csapp.c ../include/csapp.h
 
 hostinfo : hostinfo.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o hostinfo hostinfo.c ../src/csapp.c -I../include/ -lpthread
+
+hostinfo-ntop : hostinfo-ntop.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o hostinfo-ntop hostinfo-ntop.c ../src/csapp.c -I../include/ -lpthread
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
