@@ -16,3 +16,14 @@ struct sockaddr {
 	uint16_t  sa_family;	/* Protocol family */
 	char      sa_date[14];	/* Address data */
 };
+
+struct addrinfo {
+	int		ai_flags;	/* Hints argument flags */
+	int		ai_family;	/* First arg to socket function */
+	int		ai_socktype;	/* Second arg to socket function */
+	int		ai_protocol;	/* Third arg to socket function */
+	char		*ai_canonname;	/* Canonical hostname */
+	size_t		ai_addrlen;	/* Size of ai_addr struct */
+	struct sockaddr *ai_addr;	/* Ptr to socket address structure */
+	struct addrinfo *ai_next;	/* Ptr to next item in linked list */
+};
