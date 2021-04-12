@@ -1,7 +1,7 @@
 CFLAGS=-g -Og
 CC=gcc
 
-OBJECT = echoclient echoserverp select echoservers
+OBJECT = echoclient echoserverp select echoservers hello
 
 all : $(OBJECT)
 
@@ -16,6 +16,9 @@ select : select.c ../src/csapp.c ../include/csapp.h
 
 echoservers : echoservers.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o echoservers echoservers.c ../src/csapp.c -I../include/ -lpthread
+
+hello : hello.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o hello hello.c ../src/csapp.c -I../include/ -lpthread
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
