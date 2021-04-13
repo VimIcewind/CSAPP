@@ -23,6 +23,9 @@ hello : hello.c ../src/csapp.c ../include/csapp.h
 echoservert : echoservert.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o echoservert echoservert.c echo.c ../src/csapp.c -I../include/ -lpthread
 
+sharing : sharing.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o sharing sharing.c ../src/csapp.c -I../include/ -lpthread
+
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
 .c.o :
