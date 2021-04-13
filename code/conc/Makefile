@@ -1,7 +1,7 @@
 CFLAGS=-g -Og
 CC=gcc
 
-OBJECT = echoclient echoserverp select echoservers hello echoservert
+OBJECT = echoclient echoserverp select echoservers hello echoservert sharing badcnt
 
 all : $(OBJECT)
 
@@ -25,6 +25,9 @@ echoservert : echoservert.c ../src/csapp.c ../include/csapp.h
 
 sharing : sharing.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o sharing sharing.c ../src/csapp.c -I../include/ -lpthread
+
+badcnt : badcnt.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o badcnt badcnt.c ../src/csapp.c -I../include/ -lpthread
 
 .c.s :
 	$(CC) $(CFLAGS) -S $*.c
