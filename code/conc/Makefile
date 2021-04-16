@@ -2,7 +2,7 @@ CFLAGS=-g -Og
 CC=gcc
 
 OBJECT = echoclient echoserverp select echoservers hello echoservert sharing \
-	 badcnt goodcnt echoservert-pre psum-mutex
+	 badcnt goodcnt echoservert-pre psum-mutex psum-array
 
 all : $(OBJECT)
 
@@ -39,6 +39,9 @@ echoservert-pre : echoservert-pre.c echo-cnt.c sbuf.c sbuf.h ../src/csapp.c ../i
 
 psum-mutex : psum-mutex.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o psum-mutex psum-mutex.c ../src/csapp.c -I../include/ -lpthread
+
+psum-array : psum-array.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o psum-array psum-array.c ../src/csapp.c -I../include/ -lpthread
 
 
 .c.s :
