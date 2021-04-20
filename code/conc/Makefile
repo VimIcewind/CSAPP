@@ -2,7 +2,7 @@ CFLAGS=-g -Og
 CC=gcc
 
 OBJECT = echoclient echoserverp select echoservers hello echoservert sharing \
-	 badcnt goodcnt echoservert-pre psum-mutex psum-array psum-local
+	 badcnt goodcnt echoservert-pre psum-mutex psum-array psum-local race
 
 all : $(OBJECT)
 
@@ -45,6 +45,9 @@ psum-array : psum-array.c ../src/csapp.c ../include/csapp.h
 
 psum-local : psum-local.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o psum-local psum-local.c ../src/csapp.c -I../include/ -lpthread
+
+race : race.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o race race.c ../src/csapp.c -I../include/ -lpthread
 
 
 .c.s :
