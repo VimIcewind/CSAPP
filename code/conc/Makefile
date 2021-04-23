@@ -3,7 +3,7 @@ CC=gcc
 
 OBJECT = echoclient echoserverp select echoservers hello echoservert sharing \
 	 badcnt goodcnt echoservert-pre psum-mutex psum-array psum-local race \
-	 norace
+	 norace norace-val
 
 all : $(OBJECT)
 
@@ -52,6 +52,9 @@ race : race.c ../src/csapp.c ../include/csapp.h
 
 norace : norace.c ../src/csapp.c ../include/csapp.h
 	$(CC) $(CFLAGS) -o norace norace.c ../src/csapp.c -I../include/ -lpthread
+
+norace-val : norace-val.c ../src/csapp.c ../include/csapp.h
+	$(CC) $(CFLAGS) -o norace-val norace-val.c ../src/csapp.c -I../include/ -lpthread
 
 
 .c.s :
